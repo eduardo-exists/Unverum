@@ -27,6 +27,9 @@ namespace Unverum
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
+    /// 
+    /// TODO: 
+    /// - Make mod directory one level higher and introduce concept of sub-mods which are grouped
     /// </summary>
     public partial class MainWindow : Window
     {
@@ -1486,10 +1489,10 @@ namespace Unverum
             FilterBox.ItemsSource = FilterBoxList;
             CatBox.ItemsSource = All.Concat(cats[(GameFilter)GameFilterBox.SelectedIndex][(TypeFilter)TypeBox.SelectedIndex].Where(x => x.RootID == 0).OrderBy(y => y.ID));
             SubCatBox.ItemsSource = None;
-            CatBox.SelectedIndex = 0;
+            CatBox.SelectedIndex = 2;
             SubCatBox.SelectedIndex = 0;
-            FilterBox.SelectedIndex = 1;
-            NSFWCheckbox.IsChecked = false;
+            FilterBox.SelectedIndex = 2;
+            NSFWCheckbox.IsChecked = true;
             filterSelect = false;
             RefreshFilter();
             selected = true;
